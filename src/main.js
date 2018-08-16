@@ -32,7 +32,7 @@ Vue.prototype.$showError = function (error) {
     timeout: null,
     buttons: [
       Noty.button(i18n.t('buttons.reportIssue'), '', function () {
-        window.open('https://github.com/filebrowser/filebrowser/issues/new')
+        window.open('https://github.com/filebrowser/filebrowser/issues/new/choose')
       }),
       Noty.button(i18n.t('buttons.close'), '', function () {
         n.close()
@@ -42,6 +42,12 @@ Vue.prototype.$showError = function (error) {
 
   n.show()
 }
+
+Vue.directive('focus', {
+  inserted: function (el) {
+    el.focus()
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
